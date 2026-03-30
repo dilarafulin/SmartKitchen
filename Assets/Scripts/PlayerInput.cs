@@ -19,4 +19,10 @@ public class PlayerInput : MonoBehaviour
 
         return inputVector;
     }
+
+    public bool GetInteractPressed()
+    {
+        return playerInputActions.Player.Interact.WasPressedThisFrame();
+        //WasPressedThisFrame: current frame'de tusa basildiysa true, yoksa false 
+    }
 }
