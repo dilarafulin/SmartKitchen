@@ -302,7 +302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1124102736822222766, guid: 0234a8b8d01f496489b1f6297a53daee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.927
+      value: 0.672
       objectReference: {fileID: 0}
     - target: {fileID: 1124102736822222766, guid: 0234a8b8d01f496489b1f6297a53daee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -311,6 +311,26 @@ PrefabInstance:
     - target: {fileID: 1842685395457145906, guid: 0234a8b8d01f496489b1f6297a53daee, type: 3}
       propertyPath: m_Name
       value: CuttingCounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586720195483256133, guid: 0234a8b8d01f496489b1f6297a53daee, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2183157
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586720195483256133, guid: 0234a8b8d01f496489b1f6297a53daee, type: 3}
+      propertyPath: m_Size.z
+      value: 1.9788027
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586720195483256133, guid: 0234a8b8d01f496489b1f6297a53daee, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0024671555
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586720195483256133, guid: 0234a8b8d01f496489b1f6297a53daee, type: 3}
+      propertyPath: m_Center.y
+      value: 0.25918156
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586720195483256133, guid: 0234a8b8d01f496489b1f6297a53daee, type: 3}
+      propertyPath: m_Center.z
+      value: 0.036540985
       objectReference: {fileID: 0}
     - target: {fileID: 3979889215485709509, guid: 0234a8b8d01f496489b1f6297a53daee, type: 3}
       propertyPath: m_LocalPosition.x

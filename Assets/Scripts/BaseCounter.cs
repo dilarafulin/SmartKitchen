@@ -11,6 +11,10 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
     {
         Debug.LogError("Interact override edilmedi: " + gameObject.name);
     }
+    public virtual void InteractAlternate(Player player)
+    {
+     
+    }
 
     // ── IKitchenObjectParent ──────────────────────
     public Transform GetKitchenObjectFollowTransform() => counterTopPoint;

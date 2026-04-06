@@ -46,7 +46,18 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     {
         // PlayerInput event'ini dinle
         playerInput.OnInteractAction += PlayerInput_OnInteractAction;
+        playerInput.OnInteractAlternateAction += PlayerInput_OnInteractAlternateAction;
     }
+
+    private void PlayerInput_OnInteractAlternateAction(object sender, EventArgs e)
+    {
+        // F'ye basıldığında seçili bir tezgah varsa onun Alternatif Etkileşimini çalıştır
+        if (selectedCounter != null)
+        {
+            selectedCounter.InteractAlternate(this);
+        }
+    }
+
     private void PlayerInput_OnInteractAction(object sender, EventArgs e)
     {
         // E'ye basılınca burası çalışır

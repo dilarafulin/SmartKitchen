@@ -1,9 +1,11 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
     public event EventHandler OnInteractAction; // E tuþu event'i
+    public event EventHandler OnInteractAlternateAction;
 
     private PlayerInputActions playerInputActions;
 
@@ -14,9 +16,15 @@ public class PlayerInput : MonoBehaviour
 
         // E'ye basýlýnca event'i tetikle
         playerInputActions.Player.Interact.performed += Interact_performed;
+        playerInputActions.Player.InteractAlternate.performed += InteractAlternate_performed;
     }
 
-    private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    private void InteractAlternate_performed(InputAction.CallbackContext context)
+    {
+        OnInteractAlternateAction?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void Interact_performed(InputAction.CallbackContext obj)
     {
         OnInteractAction?.Invoke(this, EventArgs.Empty);
     }
@@ -25,7 +33,9 @@ public class PlayerInput : MonoBehaviour
     {
         // Memory leak'i önlemek için unsubscribe et
         playerInputActions.Player.Interact.performed -= Interact_performed;
+        playerInputActions.Player.InteractAlternate.performed -= InteractAlternate_performed;
         playerInputActions.Dispose();
+
     }
 
     public Vector2 GetMovementVectorNormalized()
