@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3536367971310123215}
-  - component: {fileID: 3569206491491447677}
+  - component: {fileID: 1204525760078275193}
   m_Layer: 0
   m_Name: Selected
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 3485251324624051822}
   m_Father: {fileID: 3979889215485709509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3569206491491447677
+--- !u!114 &1204525760078275193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectedCounterVisual
   baseCounter: {fileID: 4266198345440173042}
-  visualGameObject: {fileID: 4257530237985572052}
+  visualGameObjectArray:
+  - {fileID: 4257530237985572052}
 --- !u!1 &1842685395457145906
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 2147184644486850669}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000049173826}
-  m_LocalPosition: {x: 0, y: 1.045, z: 0}
+  m_LocalPosition: {x: 0, y: 1.016, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

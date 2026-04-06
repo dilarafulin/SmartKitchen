@@ -1,11 +1,11 @@
-using UnityEditor.Search;
 using UnityEngine;
-using UnityEngine.Rendering;
+using System;
 
 public class SelectedCounterVisual : MonoBehaviour
 {
     [SerializeField] private BaseCounter baseCounter;
-    [SerializeField] private GameObject visualGameObject;
+
+    [SerializeField] private GameObject[] visualGameObjectArray;
 
     private void Start()
     {
@@ -22,16 +22,23 @@ public class SelectedCounterVisual : MonoBehaviour
         {
             Hide();
         }
-
     }
 
     private void Show()
     {
-        visualGameObject.SetActive(true);
-    } 
+        // Dizideki her bir GameObject için dön ve hepsini aktif et
+        foreach (GameObject visualGameObject in visualGameObjectArray)
+        {
+            visualGameObject.SetActive(true);
+        }
+    }
 
     private void Hide()
     {
-        visualGameObject.SetActive(false);
+        // Dizideki her bir GameObject için dön ve hepsini kapat
+        foreach (GameObject visualGameObject in visualGameObjectArray)
+        {
+            visualGameObject.SetActive(false);
+        }
     }
 }
