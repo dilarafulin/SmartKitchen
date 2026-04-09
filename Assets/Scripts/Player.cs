@@ -102,6 +102,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         }
         
     }
+
     private void SetSelectedCounter(BaseCounter newCounter)
     {
         selectedCounter = newCounter;
