@@ -40,6 +40,23 @@ public class CuttingCounter : BaseCounter, IHasProgress
                 // Oyuncu eþyayý alýnca barý sýfýrla/kapat
                 OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs { progressNormalized = 0f });
             }
+            else
+            {
+                // OYUNCUNUN ELÝ DOLU!
+                // Elindeki þey tabak mý?
+                if (player.GetKitchenObject() is PlateKitchenObject plateKitchenObject)
+                {
+                    // Tabaksa, tahtadaki malzemeyi tabaða eklemeyi dene
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        // Tabaða baþarýyla eklendi! Tahtadaki malzemeyi yok et.
+                        GetKitchenObject().DestroySelf();
+
+                        // Kesme tahtasýnýn Progress Bar'ýný sýfýrla/gizle
+                        OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs { progressNormalized = 0f });
+                    }
+                }
+            }
         }
     }
 

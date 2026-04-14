@@ -132,7 +132,26 @@ public class StoveCounter : BaseCounter, IHasProgress
                 {
                     progressNormalized = 0f
                 });
+            } else
+            {
+                // OYUNCUNUN ELİ DOLU! 
+                // Acaba elindeki şey bir Tabak mı?
+                if (player.GetKitchenObject() is PlateKitchenObject plateKitchenObject)
+                {
+                    // Tabaksa, ocaktaki malzemeyi (örneğin pişmiş eti) tabağa eklemeyi dene
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        // Tabağa başarıyla eklendi! Ocaktaki eti tamamen yok et.
+                        GetKitchenObject().DestroySelf();
+
+                        // KRİTİK NOKTA: Ocağı sıfırla (Ateşi söndür ve UI barı kapat)
+                        state = State.Idle;
+                        OnStateChanged?.Invoke(this, new OnStateChangedEventArgs { state = state });
+                        OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs { progressNormalized = 0f });
+                    }
+                }
             }
+             
         }
     }
 

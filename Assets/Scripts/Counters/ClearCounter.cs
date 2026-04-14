@@ -8,22 +8,43 @@ public class ClearCounter : BaseCounter
     {
         if (!HasKitchenObject())
         {
-            // Tezgah boþ — oyuncunun elindekini býrak
+            // 1. SENARYO: Tezgah tamamen boþ
             if (player.HasKitchenObject())
             {
+                // Oyuncuda eþya var, tezgaha býrak
                 player.GetKitchenObject().SetKitchenObjectParent(this);
             }
-            // Ýkisi de boþsa hiçbir þey yapma
         }
         else
         {
-            // Tezgahta bir þey var
-            if (!player.HasKitchenObject())
+            // 2. SENARYO: Tezgahta kesinlikle bir eþya var
+            if (player.HasKitchenObject())
             {
-                // Oyuncu boþ — tezgahtakini al
+                // A) OYUNCUNUN DA ELÝ DOLU (Birleþtirme Senaryolarý)
+
+                // DURUM 1: Tezgahtaki þey bir Tabak mý?
+                if (GetKitchenObject() is PlateKitchenObject plateKitchenObject)
+                {
+                    if (plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        player.GetKitchenObject().DestroySelf();
+                    }
+                }
+                // DURUM 2: Oyuncunun elindeki þey bir Tabak mý?
+                else if (player.GetKitchenObject() is PlateKitchenObject playerPlateKitchenObject)
+                {
+                    if (playerPlateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        GetKitchenObject().DestroySelf();
+                    }
+                }
+            }
+            else
+            {
+                // B) OYUNCUNUN ELÝ BOÞ (Tezgahtakini Alma Senaryosu)
+                // Bu kod artýk baðýmsýz bir 'else' bloðunda olduðu için kusursuz çalýþacak.
                 GetKitchenObject().SetKitchenObjectParent(player);
             }
-            // Ýkisinde de varsa þimdilik hiçbir þey yapma
         }
     }
 }
