@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu()]
+[CreateAssetMenu(menuName = "ScriptableObjects/CuttingRecipeSO")]
 public class CuttingRecipeSO : ScriptableObject
 {
     public KitchenObjectSO input;           // Ne kesilecek? (Örn: Normal Domates)

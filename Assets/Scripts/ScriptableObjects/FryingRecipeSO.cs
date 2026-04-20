@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu()]
+[CreateAssetMenu(menuName = "ScriptableObjects/FryingRecipeSO")]
 public class FryingRecipeSO : ScriptableObject
 {
     public KitchenObjectSO input;           

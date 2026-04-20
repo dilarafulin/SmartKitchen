@@ -83,7 +83,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
             lastInteractDir = moveDir;
         }
 
-        Vector3 rayOrigin = transform.position + Vector3.up * 0.5f;
+        Vector3 rayOrigin = transform.position + Vector3.up * 0.95f;
 
         // 1. AŞAMA: SÜREKLİ RAYCAST AT VE NEYE BAKTIĞIMIZI BUL
         if (Physics.Raycast(rayOrigin, lastInteractDir, out RaycastHit hit, interactDistance, countersLayerMask))
