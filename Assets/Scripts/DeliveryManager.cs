@@ -38,6 +38,7 @@ public class DeliveryManager : MonoBehaviour
                 // Havuzdan rastgele bir tarif seç
                 RecipeSO waitingRecipeSO = recipeListSO.recipeSOList[UnityEngine.Random.Range(0, recipeListSO.recipeSOList.Count)];
 
+                Debug.Log(waitingRecipeSO.recipeName);
                 // Bekleyenler listesine ekle
                 waitingRecipeSOList.Add(waitingRecipeSO);
 
@@ -96,5 +97,11 @@ public class DeliveryManager : MonoBehaviour
 
         // Eðer döngü bittiyse ve return olmadýysa, oyuncu yanlýþ yemek getirmiþtir.
         Debug.Log("Hata: Oyuncu yanlýþ bir yemek getirdi veya böyle bir sipariþ yok!");
+    }
+
+    // UI'ýn bekleyen listeyi okuyabilmesi için
+    public List<RecipeSO> GetWaitingRecipeSOList()
+    {
+        return waitingRecipeSOList;
     }
 }
