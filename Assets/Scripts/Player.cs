@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IKitchenObjectParent
+public class Player : MonoBehaviour, IKitchenObjectParent, IMovable
 {
     public static Player Instance { get; private set; } 
 
