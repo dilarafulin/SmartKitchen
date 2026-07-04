@@ -123,12 +123,11 @@ Key hyperparameters (`config/souschef.yaml`):
 | Normalize | true |
 
 ---
-#Known Limitations
+## Known Limitations
 This project focuses on the AI agent and core cooking mechanics. The following features are not implemented:
 
 - No win / lose UI — the game does not currently display a victory or game-over screen when an order is completed or failed.
 - No pause menu — pressing Esc does not open a pause menu; the game cannot be paused or resumed through a dedicated menu.
-- 
 ## License
 
 This project was developed for academic purposes as a graduation project.
