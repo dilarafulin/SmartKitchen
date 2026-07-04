@@ -12,6 +12,8 @@ LevelScene
 ## Controls
 <img width="1577" height="891" alt="Ekran görüntüsü 2026-07-04 183301" src="https://github.com/user-attachments/assets/563100b3-c232-4644-afd2-83a6568f0ed0" />
 GameScene
+
+
 | Input | Actions |
 |------|-----------|
 | W A S D / Arrow Keys | Move the player character |
