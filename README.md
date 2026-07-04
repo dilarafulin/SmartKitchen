@@ -17,7 +17,7 @@ RecipeRush is an Overcooked-style, top-down cooking game featuring an autonomous
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Area | Technology |
 |------|-----------|
