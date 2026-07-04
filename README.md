@@ -1,10 +1,24 @@
 # RecipeRush
+<img width="1575" height="881" alt="Ekran görüntüsü 2026-07-04 182809" src="https://github.com/user-attachments/assets/4b46dcaf-24b4-4d29-836c-746abb016e5e" />
+MainMenu
 
 **A cooking game with a Reinforcement Learning powered AI assistant, built in Unity with ML-Agents.**
 
 RecipeRush is an Overcooked-style, top-down cooking game featuring an autonomous AI agent called the **Sous Chef**. Instead of being scripted with hand-written rules, the Sous Chef is trained with **Reinforcement Learning (PPO)** using Unity ML-Agents. It learns to navigate the kitchen and complete cooking tasks — fetching, chopping, cooking, and delivering — entirely on its own, without being given explicit direction vectors toward its targets.
 
+<img width="1583" height="885" alt="Ekran görüntüsü 2026-07-04 182827" src="https://github.com/user-attachments/assets/b062781c-4113-4e58-9b8b-75413b84a102" />
+LevelScene
 
+## Controls
+<img width="1577" height="891" alt="Ekran görüntüsü 2026-07-04 183301" src="https://github.com/user-attachments/assets/563100b3-c232-4644-afd2-83a6568f0ed0" />
+GameScene
+| Input | Actions |
+|------|-----------|
+| W A S D / Arrow Keys | Move the player character |
+| F | chop (at cutting station) or cook (at stove) |
+| E | Pick up / drop / plate ingredients |
+| R | Auto-assign a full order to the Sous Chef agent |
+| Right Click (on a counter) | Open the micro-command menu to give the agent a specific task at that station |
 
 ## Features
 
@@ -59,31 +73,6 @@ All positions are normalized. The agent is deliberately **not** given a ready-ma
 - Penalties for going out of bounds, timing out, or burning food
 - Intermediate rewards for multi-step tasks (chopping, cooking)
 
----
-
-## Project Structure
-
-```
-RecipeRush/
-├── Assets/
-│   └── Scripts/
-│       ├── SousChef/            # RL agent + task management
-│       │   ├── SousChefAgent.cs         # The RL agent (observations, actions, rewards)
-│       │   ├── SousChefTaskManager.cs    # Assigns and tracks tasks
-│       │   ├── SousChefTrainingManager.cs# Generates tasks during training
-│       │   ├── SousChefCommand.cs        # Command enum (Fetch/Chop/Cook/Deliver/Idle)
-│       │   └── *Chain.cs                  # Multi-step task chains
-│       ├── Counters/            # Interaction stations (BaseCounter hierarchy)
-│       ├── ScriptableObjects/   # Ingredient & recipe dataset (43 assets)
-│       ├── Player.cs            # Human player controller
-│       └── ...
-├── config/
-│   ├── souschef.yaml            # ML-Agents training configuration
-│   └── convert_to_onnx.py       # Checkpoint → ONNX conversion script
-└── results/                     # Training runs (souschef_v1 ... v26+)
-```
-
----
 
 ## Getting Started
 
@@ -132,7 +121,12 @@ Key hyperparameters (`config/souschef.yaml`):
 | Normalize | true |
 
 ---
+#Known Limitations
+This project focuses on the AI agent and core cooking mechanics. The following features are not implemented:
 
+- No win / lose UI — the game does not currently display a victory or game-over screen when an order is completed or failed.
+- No pause menu — pressing Esc does not open a pause menu; the game cannot be paused or resumed through a dedicated menu.
+- 
 ## License
 
 This project was developed for academic purposes as a graduation project.
